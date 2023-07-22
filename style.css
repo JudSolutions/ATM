@@ -1,70 +1,327 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
+.button-88:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.button-88:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+button,
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+/* general */
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+body {
+  background-color: #da4646;
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* custom */
+.Title {
+  color: #d6d6d6;
+  font-size: 3rem;
+}
+
+.Atm {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5%;
+  padding: 3.7%; /* TODO: modify to relative value */
+  border: 1px solid black;
+  background-color: #52596c;
+  width: 95%;
+  max-width: 682px;
+  /* min-width: 400px; */
+}
+
+.CommandsPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 63%;
+  max-width: 390px;
+  /* min-width: 110px; */
+}
+
+.CardPanel {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  max-width: 200px;
+}
+
+.Screen {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* padding: 50px 15px; */
+  width: 100%;
+  max-width: 390px;
+  height: 240px;
+  background-color: #333a44;
+  box-shadow: inset 2px 2px 5px #23282f, inset -2px -2px 5px #48525f;
+}
+
+.LeftButtonsPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18%;
+  max-width: 70px;
+  gap: 10px;
+}
+
+.ScreenPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  width: 52%;
+  max-width: 200px;
+  border: 4px solid black;
+  background-color: #bbe6f3;
+}
+
+.RightButtonsPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18%;
+  max-width: 70px;
+  gap: 10px;
+}
+
+.ButtonPanel {
+  width: 100%;
+  max-width: 70px;
+  height: 50px;
+  background-color: #d5d5d5;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 5px #999;
+}
+
+.ButtonPanel:hover {
+  background-color: #bcbcbc;
+}
+
+.ButtonPanel:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+.Keypad {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5.2%;
+  width: 100%;
+  max-width: 390px;
+  padding: 15px 0;
+  background-color: #333a44;
+  box-shadow: inset 2px 2px 5px #23282f, inset -2px -2px 5px #48525f;
+}
+
+.NumberPad {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 70%;
+  max-width: 200px;
+}
+
+.KeyPadButton {
+  width: 30%;
+  max-width: 60px;
+  height: 40px;
+  background-color: #d5d5d5;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 5px #999;
+}
+
+.KeyPadButton:hover {
+  background-color: #bcbcbc;
+}
+
+.KeyPadButton:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+.ActionPad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 25%;
+  max-width: 60px;
+}
+
+.isGreen {
+  background-color: #3fb24d;
+  color: white;
+  width: 100%;
+}
+.isGreen:hover {
+  background-color: #379d43;
+}
+
+.isRed {
+  background-color: #ca3333;
+  color: white;
+  width: 100%;
+}
+.isRed:hover {
+  background-color: #b02c2c;
+}
+
+.Card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 200px;
+  height: 120px;
+  border-radius: 10px;
+  background-image:url(card.png);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+  position: relative;
+}
+
+.Card:hover {
+  transform: scale(1.1);
+}
+
+.Card-tape {
+  width: 100%;
+  height: 20px;
+  margin-top: 18px;
+  background-color: black;
+}
+
+.Card-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 18px;
+  padding: 10px 10px;
+}
+
+.Card-name {
+  background-color: transparent;
+  color: black;
+}
+
+.ScreenPanel-field {
+  background-color: transparent;
+  text-align: center;
+}
+
+.ScreenPanel-message {
+  background-color: transparent;
+  text-align: center;
+  padding: 5px;
+}
+
+.ScreenPanel-amount {
+  background-color: transparent;
+  text-align: center;
+  padding: 5px;
+}
+
+.Card-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  color: white;
+  background: #dc863b;
+  background: linear-gradient(0deg, rgb(220, 134, 59) 0%, rgb(237, 149, 72) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #874810;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Card-button:hover {
+  transform: scale(1.1);
+}
+
+.Card-button:active {
+  transform: translateY(4px);
+}
+
+@media screen and (max-width: 620px) {
+  html,
+  button,
+  .Card-name {
+    font-size: 12px;
   }
-  
-  h1 {
-    color: #333;
+}
+
+@media screen and (max-width: 590px) {
+  body {
+    height: auto;
   }
-  
-  .form-group {
-    margin-bottom: 10px;
+
+  .Atm {
+    flex-direction: column;
+    padding: 10px 5px;
+    gap: 20px;
+    /* max-width: 360px; */
+    margin: 10px 0px;
   }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="password"] {
+
+  .CardPanel {
+    order: 0;
     width: 100%;
-    padding: 5px;
   }
-  
-  button {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+  .CommandsPanel {
+    order: 1;
+    width: 95%;
   }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  #balance {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  input[type="number"] {
-    width: 100px;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-    
+}
